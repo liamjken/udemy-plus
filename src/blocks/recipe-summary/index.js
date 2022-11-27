@@ -1,7 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import { useEntityProp } from '@wordpress/core-data';
+import { useEntityProp } from '@wordpress/core-data'
 import { useSelect } from '@wordpress/data'
 import { Spinner } from '@wordpress/components'
 import icons from '../../icons.js';
@@ -45,7 +45,6 @@ registerBlockType('udemy-plus/recipe-summary', {
         })
 
         console.log(rating)
-
 
     return (
       <>

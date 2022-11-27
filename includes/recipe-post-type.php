@@ -40,7 +40,7 @@ function up_recipe_post_type() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 20,
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom_fields' ),
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ),
         'show_in_rest'       => true,
         'description'        => __('A Custom post type for recipes', 'udemy-plus'),
         'taxonomies'         => ['category', 'post_tag']   
