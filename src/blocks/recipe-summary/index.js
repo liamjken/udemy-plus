@@ -38,8 +38,6 @@ registerBlockType('udemy-plus/recipe-summary', {
         }, [termIDs])
 
 
-        console.log(select("core/editor"))
-
     return (
       <>
         <div {...blockProps}>
