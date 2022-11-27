@@ -1,7 +1,7 @@
 # Wordpress - ignore core, configuration, examples, uploads and logs.
 # https://github.com/github/gitignore/blob/main/WordPress.gitignore
 
-node_modules
+
 
 # Core
 #
@@ -17,6 +17,7 @@ node_modules
 /readme.html
 /wp-*.php
 /xmlrpc.php
+/node_modules
 
 # Configuration
 wp-config.php
