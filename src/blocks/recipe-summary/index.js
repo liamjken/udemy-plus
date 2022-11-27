@@ -37,6 +37,15 @@ registerBlockType('udemy-plus/recipe-summary', {
             }
         }, [termIDs])
 
+        const { rating } = useSelect(select => {
+          const { getCurrentPostAttribute } = select('core/editor')
+          return {
+            rating: getCurrentPostAttribute('meta').recipe_rating
+          }
+        })
+
+        console.log(rating)
+
 
     return (
       <>
