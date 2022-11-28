@@ -18,6 +18,16 @@ function up_recipe_summary_render_cb($atts, $content, $block) {
         $cuisines .= "<a href='{$url}' target='_blank'>{$term->name}</a>{$comma} ";
     }
 
+    $rating = get_post_meta($postID, 'recipe_rating', true);
+
+    global $wpdb;
+    $userID = get_current_user_id();
+    $ratingCount = $wpdb->get_var($wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}recipe_ratings
+       WHERE post_id=%d AND user_id=%d",
+       $postID, $userID
+    ));
+
        ob_start();
     ?>
    <div class="wp-block-udemy-plus-recipe-summary">
@@ -64,6 +74,11 @@ function up_recipe_summary_render_cb($atts, $content, $block) {
       <div class="recipe-title">
         <?php _e('Rating', 'udemy-plus'); ?>
       </div>
+      <div class="recipe-data" id="recipe-rating"
+      data-post-id="<?php echo $postID; ?>"
+      data-avg-rating="<?php echo $rating; ?>"
+      data-logged-in="<?php echo is_user_logged_in(); ?>"
+      data-rating-count="<?php echo $ratingCount; ?>"></div>
       <i class="bi bi-hand-thumbs-up"></i>
     </div>
   </div>
