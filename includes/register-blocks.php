@@ -17,7 +17,10 @@ function up_register_blocks() {
         ]],
         [ 'name' => 'recipe-summary', 'options' => [
             'render_callback' => 'up_recipe_summary_render_cb'
-        ]]
+        ]],
+        [ 'name' => 'team-members-group'],
+        [ 'name' => 'team-member']
+
     ];
 
     foreach($blocks as $block) {
