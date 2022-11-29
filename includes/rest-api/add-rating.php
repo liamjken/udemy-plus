@@ -50,7 +50,7 @@ function up_rest_api_add_rating_handler($request) {
         'postID' => $postID,
         'rating' => $rating,
         'userID' => $userID
-    ])
+    ]);
 
     $response['status'] = 2;
     $response['rating'] = $avgRating;
