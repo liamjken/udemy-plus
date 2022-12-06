@@ -4,8 +4,10 @@ import {
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { 
-  PanelBody, TextareaControl
+  PanelBody, TextareaControl, Spinner
 } from '@wordpress/components';
+import { isBlobURL } from '@wordpress/blob'
+import { useState } from '@wordpress/element'
 import icons from '../../icons.js';
 import './main.css';
 
@@ -18,6 +20,8 @@ registerBlockType('udemy-plus/team-member', {
       name, title, bio, imgID, imgAlt, imgURL, socialHandles
     } = attributes;
     const blockProps = useBlockProps();
+
+    const [imgPreview, setImgPreview] = useState(imgURL)
 
     return (
       <>
@@ -36,15 +40,41 @@ registerBlockType('udemy-plus/team-member', {
         </InspectorControls>
         <div {...blockProps}>
           <div className="author-meta">
-            <img /> 
+            { imgPreview && <img src={imgPreview} alt={imgAlt}/> }
+            { isBlobURL(imgPreview ) && <Spinner /> }
             <MediaPlaceholder 
               allowedTypes={['image']}
               accept={'image/*'}
               icon="admin-users"
-              onSelect={img => {
-                console.log(img)
+              onSelect={img => { 
+
+                let newImgURL = null
+
+                if (isBlobURL(img.url)) {
+                  newImgURL = img.url
+                } else {
+                  newImgURL = img.sizes ?
+                  img.sizes.teamMember.url :
+                  img.media_details.sizes.teamMember.source_url
+
+                  setAttributes({
+                    imgID: img.id,
+                    imgAlt: img.alt,
+                    imgURL: newImgURL
+                  })
+                }
+
+                setImgPreview(newImgURL)
               }}
               onError={error => console.error(error)}
+              disableMediaButtons={imgPreview}
+              onSelectURL={url => {
+                setAttributes({
+                  imgID: null,
+                  imgAlt: null,
+                  imgURL: url
+                })
+              }}
             />
             <p>
               <RichText 
