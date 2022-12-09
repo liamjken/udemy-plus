@@ -68,7 +68,7 @@ __webpack_require__.r(__webpack_exports__);
     });
     setImgPreview(url);
   };
-  const imageClass = `wp-image-${imgID} img=${context["udemy-plus/image-shape"]}`;
+  const imageClass = `wp-image-${imgID} img-${context["udemy-plus/image-shape"]}`;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, imgPreview && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
     group: "inline"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaReplaceFlow, {
@@ -101,7 +101,8 @@ __webpack_require__.r(__webpack_exports__);
     className: "author-meta"
   }, imgPreview && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: imgPreview,
-    alt: imgAlt
+    alt: imgAlt,
+    className: imageClass
   }), (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_4__.isBlobURL)(imgPreview) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Spinner, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
     allowedTypes: ['image'],
     accept: 'image/*',
@@ -135,7 +136,29 @@ __webpack_require__.r(__webpack_exports__);
     value: bio
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "social-links"
-  })));
+  }, socialHandles.map((handle, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: handle.url,
+      key: index
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: `bi bi-${handle.icon}`
+    }));
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add Social Meida Handle', "udemy-plus")
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "",
+    onClick: event => {
+      event.preventDefault();
+      setAttributes({
+        socialHandles: [...socialHandles, {
+          icon: "question",
+          url: ""
+        }]
+      });
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
+    icon: "plus"
+  }))))));
 }
 
 /***/ }),

@@ -3,7 +3,7 @@ import {
   } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { 
-    PanelBody, TextareaControl, Spinner, ToolbarButton 
+    PanelBody, TextareaControl, Spinner, ToolbarButton, Tooltip,Icon 
   } from '@wordpress/components';
 import { isBlobURL, revokeBlobURL } from '@wordpress/blob'
 import { useState } from '@wordpress/element'
@@ -14,9 +14,9 @@ export default function ({ attributes, setAttributes, context }) {
     } = attributes;
     const blockProps = useBlockProps();
 
-    const [imgPreview, setImgPreview] = useState(imgURL)
+    const [imgPreview, setImgPreview] = useState(imgURL);
 
-    const selectImg = img => { 
+    const selectImg = (img) => { 
 
         let newImgURL = null
 
@@ -40,7 +40,7 @@ export default function ({ attributes, setAttributes, context }) {
         setImgPreview(newImgURL)
       }
 
-      const selectImgURL = url => {
+      const selectImgURL = (url) => {
         setAttributes({
           imgID: null,
           imgAlt: null,
@@ -49,7 +49,7 @@ export default function ({ attributes, setAttributes, context }) {
         setImgPreview(url);
       };
 
-      const imageClass = `wp-image-${imgID} img=${context["udemy-plus/image-shape"]}`;
+      const imageClass = `wp-image-${imgID} img-${context["udemy-plus/image-shape"]}`;
 
     return (
       <>
@@ -96,7 +96,9 @@ export default function ({ attributes, setAttributes, context }) {
         </InspectorControls>
         <div {...blockProps}>
           <div className="author-meta">
-            { imgPreview && <img src={imgPreview} alt={imgAlt}/> }
+            { imgPreview && (
+            <img src={imgPreview} alt={imgAlt} className={imageClass}/>
+            )}
             { isBlobURL(imgPreview ) && <Spinner /> }
             <MediaPlaceholder 
               allowedTypes={['image']}
@@ -130,7 +132,31 @@ export default function ({ attributes, setAttributes, context }) {
               value={bio}
             />
           </div>
-          <div className="social-links"></div>
+          <div className="social-links">
+            {socialHandles.map((handle, index) => {
+              return (
+              <a href={handle.url} key={index}>
+                <i className={`bi bi-${handle.icon}`}></i>
+              </a>
+              );
+            })}
+            <Tooltip text={__('Add Social Meida Handle', "udemy-plus")}>
+            <a href="" onClick={event => {
+              event.preventDefault()
+              setAttributes({
+                socialHandles: [...socialHandles, {
+                  icon: "question",
+                  url: "",
+                },
+              ],
+              });
+
+            }} 
+            >
+              <Icon icon="plus" />
+            </a>
+            </Tooltip>
+          </div>
         </div>
       </>
     );

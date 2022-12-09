@@ -2,6 +2,113 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/blocks/team-members-group/edit.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/team-members-group/edit.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
+  let {
+    attributes,
+    setAttributes
+  } = _ref;
+  const {
+    columns,
+    imageShape
+  } = attributes;
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
+    className: `cols-${columns}`
+  });
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Settings', 'udemy-plus')
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Columns', 'udemy-plus'),
+    onChange: columns => setAttributes({
+      columns
+    }),
+    value: columns,
+    min: 2,
+    max: 4
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Image Shape', 'udemy-plus'),
+    value: imageShape,
+    options: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Hexagon', 'udemy-plus'),
+      value: 'hexagon'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Rabbet', 'udemy-plus'),
+      value: 'rabbet'
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Pentagon', 'udemy-plus'),
+      value: 'pentagon'
+    }],
+    onChange: imageShape => setAttributes({
+      imageShape
+    })
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks, {
+    orientation: "horizontal",
+    allowedBlocks: ['udemy-plus/team-member'],
+    template: [['udemy-plus/team-member', {
+      name: 'John Doe',
+      title: 'CEO of Udemy',
+      bio: 'This is an example of a bio'
+    }], ['udemy-plus/team-member'], ['udemy-plus/team-member']]
+  })));
+}
+
+/***/ }),
+
+/***/ "./src/blocks/team-members-group/save.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/team-members-group/save.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
+  let {
+    attributes
+  } = _ref;
+  const {
+    columns
+  } = attributes;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
+    className: `cols-${columns}`
+  });
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null));
+}
+
+/***/ }),
+
 /***/ "./src/icons.js":
 /*!**********************!*\
   !*** ./src/icons.js ***!
@@ -239,89 +346,26 @@ var __webpack_exports__ = {};
   !*** ./src/blocks/team-members-group/index.js ***!
   \************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../icons.js */ "./src/icons.js");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main.css */ "./src/blocks/team-members-group/main.css");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../icons.js */ "./src/icons.js");
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main.css */ "./src/blocks/team-members-group/main.css");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/blocks/team-members-group/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./save */ "./src/blocks/team-members-group/save.js");
 
 
 
 
 
 
-
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)('udemy-plus/team-members-group', {
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('udemy-plus/team-members-group', {
   icon: {
-    src: _icons_js__WEBPACK_IMPORTED_MODULE_5__["default"].primary
+    src: _icons_js__WEBPACK_IMPORTED_MODULE_2__["default"].primary
   },
-  edit(_ref) {
-    let {
-      attributes,
-      setAttributes
-    } = _ref;
-    const {
-      columns,
-      imageShape
-    } = attributes;
-    const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-      className: `cols-${columns}`
-    });
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Settings', 'udemy-plus')
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Columns', 'udemy-plus'),
-      onChange: columns => setAttributes({
-        columns
-      }),
-      value: columns,
-      min: 2,
-      max: 4
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Image Shape', 'udemy-plus'),
-      value: imageShape,
-      options: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Hexagon', 'udemy-plus'),
-        value: 'hexagon'
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Rabbet', 'udemy-plus'),
-        value: 'rabbet'
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Pentagon', 'udemy-plus'),
-        value: 'pentagon'
-      }],
-      onChange: imageShape => setAttributes({
-        imageShape
-      })
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
-      orientation: "horizontal",
-      allowedBlocks: ['udemy-plus/team-member'],
-      template: [['udemy-plus/team-member', {
-        name: 'John Doe',
-        title: 'CEO of Udemy',
-        bio: 'This is an example of a bio'
-      }], ['udemy-plus/team-member'], ['udemy-plus/team-member']]
-    })));
-  },
-  save(_ref2) {
-    let {
-      attributes
-    } = _ref2;
-    const {
-      columns
-    } = attributes;
-    const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-      className: `cols-${columns}`
-    });
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
-  }
+  edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 }();
 /******/ })()
