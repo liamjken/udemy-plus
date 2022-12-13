@@ -60,6 +60,10 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
 
       const [activeSocialLink, setActiveSocialLink] = useState(null);
 
+      setAttributes({
+        imageShape: context["udemy-plus/image-shape"],
+      });
+
     return (
       <>
       { imgPreview && (
