@@ -48,3 +48,4 @@ add_filter('rest_recipe_query', 'up_rest_recipe_query', 10, 2);
 add_action('admin_menu', 'up_admin_menus');
 add_action('admin_post_up_save_options', 'up_save_options');
 add_action('admin_enqueue_scripts', 'up_admin_enqueue');
+add_action('init', 'up_register_assets');
