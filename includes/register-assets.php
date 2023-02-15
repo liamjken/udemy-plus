@@ -17,7 +17,7 @@ function up_register_assets() {
 
     );
 
-    $editorAsset = include(UP_PLUGIN_DIR. 'build/block-editor/index.asset.php')
+    $editorAsset = include(UP_PLUGIN_DIR . 'build/block-editor/index.asset.php');
 
     wp_register_script(
         'up_editor',
@@ -25,5 +25,5 @@ function up_register_assets() {
         $editorAsset['dependencies'],
         $editorAsset['version'],
         true
-    )
+    );
 }
