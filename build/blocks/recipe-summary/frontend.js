@@ -31818,10 +31818,11 @@ function RecipeRating(props) {
     precision: 0.5,
     onChange: async (event, rating) => {
       if (!permission) {
-        return alert('You have already rated this recipe or you may need to login in.');
+        return alert('You have already rated this recipe or you may need to log in.');
       }
       setPermission(false);
       const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__({
+        // example.com/wp-json/up/v1/rate
         path: 'up/v1/rate',
         method: 'POST',
         data: {
@@ -31829,7 +31830,7 @@ function RecipeRating(props) {
           rating
         }
       });
-      if (response.status === 2) {
+      if (response.status == 2) {
         setAvgRating(response.rating);
       }
     }
