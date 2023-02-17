@@ -1,12 +1,14 @@
-import { registerBlockType } from '@wordpress/blocks'
+import { registerBlockType } from '@wordpress/blocks';
 import { 
-    RichText, useBlockProps, InspectorControls
-} from '@wordpress/block-editor'
-import { __ } from '@wordpress/i18n'
-import { PanelBody, ColorPalette } from '@wordpress/components'
-import block from './block.json'
-import './main.css'
-import icons from '../../icons'
+    RichText, 
+    useBlockProps, 
+    InspectorControls
+} from '@wordpress/block-editor';
+import { __ } from '@wordpress/i18n';
+import { PanelBody, ColorPalette } from '@wordpress/components';
+import block from './block.json';
+import './main.css';
+import icons from '../../icons.js';
 
 registerBlockType(block.name, {
     icon: icons.primary,

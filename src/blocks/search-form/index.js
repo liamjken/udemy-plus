@@ -1,10 +1,10 @@
-import { registerBlockType } from '@wordpress/blocks'
+import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, PanelColorSettings, InspectorControls 
-} from '@wordpress/block-editor'
-import { __ } from "@wordpress/i18n"
-import block from './block.json'
-import icons from '../../icons'
-import './main.css'
+} from '@wordpress/block-editor';
+import { __ } from "@wordpress/i18n";
+import block from './block.json';
+import icons from '../../icons.js';
+import './main.css';
 
 registerBlockType(block.name, {
     icon: icons.primary,
